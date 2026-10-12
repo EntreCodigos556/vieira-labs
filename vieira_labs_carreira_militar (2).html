@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIEIRA LABS | Carreira Militar</title>
+<style>
+:root{--bg:#090d0b;--panel:#121a15;--panel2:#18231b;--text:#eef5ec;--muted:#a0b0a0;--green:#a8ef79;--line:rgba(190,220,185,.16);--gold:#e7c76c;--red:#ff7777}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 10% 0%,rgba(115,170,83,.14),transparent 38%),radial-gradient(ellipse at 90% 100%,rgba(193,165,82,.08),transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding:22px}
+button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #fff;outline-offset:3px}.app{max-width:1060px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}.brand{font-weight:950;letter-spacing:.14em}.brand span{color:var(--green)}.chip{font-size:.75rem;border:1px solid var(--line);border-radius:99px;padding:8px 11px;color:var(--muted)}.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:16px;align-items:start}.panel{border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,26,21,.97),rgba(13,19,15,.98));border-radius:20px;padding:22px;box-shadow:0 18px 55px rgba(0,0,0,.22)}.profile{text-align:center}.avatar{width:105px;height:105px;margin:0 auto 14px;border-radius:24px;background:linear-gradient(145deg,#293d2c,#101912);border:1px solid rgba(168,239,121,.4);display:grid;place-items:center;font-size:3.1rem}.eyebrow{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:850;color:var(--green)}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:-.045em;line-height:1.06;margin:10px 0}h2{font-size:1.35rem;letter-spacing:-.025em;margin-bottom:10px}.muted{color:var(--muted);line-height:1.6}.rank{font-size:1.5rem;font-weight:900;margin:8px 0 3px}.sub{color:var(--muted);font-size:.84rem}.xp-row{display:flex;justify-content:space-between;gap:8px;font-size:.8rem;color:var(--muted);margin:22px 0 8px}.bar{height:9px;background:#263228;border-radius:99px;overflow:hidden}.bar div{height:100%;width:0;background:linear-gradient(90deg,#a8ef79,#e7c76c);transition:width .25s}.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.mini{padding:12px;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid var(--line)}.mini strong{display:block;font-size:1.15rem}.mini span{font-size:.73rem;color:var(--muted)}.attr-list{display:grid;gap:10px;margin-top:12px}.attr{display:flex;align-items:center;gap:10px}.attr .name{flex:1;font-size:.88rem}.attr .value{font-weight:900;min-width:22px;text-align:right}.plus{border:1px solid var(--line);background:#243327;color:var(--green);border-radius:8px;width:30px;height:30px;font-weight:900}.plus:disabled{opacity:.35;cursor:not-allowed}.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.btn{border:0;background:var(--green);color:#10170d;border-radius:11px;padding:12px 16px;font-weight:900}.btn.secondary{background:#26362a;color:var(--text);border:1px solid var(--line)}.btn.gold{background:var(--gold);color:#201a08}.btn:disabled{opacity:.4;cursor:not-allowed}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}.tab{border:1px solid var(--line);background:#131c16;color:var(--muted);padding:9px 12px;border-radius:10px;font-weight:750}.tab.active{border-color:var(--green);color:var(--green);background:rgba(168,239,121,.08)}.screen{display:none}.screen.active{display:block}.mission{padding:17px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.025);margin-top:14px}.mission h3{margin:8px 0}.question{font-size:1.22rem;line-height:1.4;margin:17px 0}.answers{display:grid;gap:9px}.answer{display:flex;align-items:center;gap:11px;text-align:left;border:1px solid var(--line);border-radius:12px;background:#19241c;color:var(--text);padding:13px;width:100%}.answer:hover:not(:disabled){border-color:var(--green)}.letter{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:8px;background:#293a2b;color:var(--green);font-weight:900}.answer.correct{border-color:var(--green);background:rgba(168,239,121,.12)}.answer.wrong{border-color:var(--red);background:rgba(255,119,119,.1)}.answer:disabled{cursor:default}.feedback{border-radius:12px;padding:13px;margin-top:13px;line-height:1.5}.feedback.good{border:1px solid rgba(168,239,121,.35);background:rgba(168,239,121,.08)}.feedback.bad{border:1px solid rgba(255,119,119,.35);background:rgba(255,119,119,.08)}.feedback strong{display:block;margin-bottom:4px}.bottom-row{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap}.hidden{display:none!important}.notice{font-size:.85rem;color:var(--muted);line-height:1.55}.rank-list{display:grid;gap:8px;margin-top:15px}.rank-item{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:12px}.rank-icon{width:38px;height:38px;border-radius:10px;background:#253329;display:grid;place-items:center}.rank-item.current{border-color:var(--green);background:rgba(168,239,121,.06)}.rank-item .info{flex:1}.rank-item strong{display:block}.rank-item small{color:var(--muted)}.status{font-size:.76rem;color:var(--gold)}.toast{margin-top:13px;border:1px solid rgba(231,199,108,.3);background:rgba(231,199,108,.07);border-radius:12px;padding:13px;line-height:1.5}.difficulty-picker{margin:16px 0 8px;padding:14px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.difficulty-picker label{display:block;font-weight:850;margin-bottom:8px}.difficulty-picker select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#19241c;color:var(--text);font:inherit}.foot{text-align:center;color:#708070;font-size:.75rem;margin-top:17px}.divider{height:1px;background:var(--line);margin:18px 0}@media(max-width:800px){body{padding:12px}.layout{grid-template-columns:1fr}.profile{display:grid;grid-template-columns:82px 1fr;text-align:left;gap:0 14px;align-items:center}.avatar{width:76px;height:76px;grid-row:span 2;margin:0;font-size:2.4rem}.profile .rank,.profile .sub{margin:0}.xp-row,.profile .bar,.profile-grid,.profile .divider,.attr-area{grid-column:1/-1}.xp-row{margin-top:18px}} 
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">VIEIRA <span>LABS</span></div>
+    <div class="chip">PROJETO 001 · SIMULADOR DE CARREIRA</div>
+  </header>
+  <div class="layout">
+    <aside class="panel profile">
+      <div class="avatar" aria-hidden="true">🪖</div>
+      <div>
+        <div class="eyebrow">Ficha militar</div>
+        <div class="rank" id="profile-rank">Recruta</div>
+        <div class="sub" id="profile-title">Em formação</div>
+      </div>
+      <div class="xp-row"><span>Experiência (XP)</span><strong id="xp-label">0 XP</strong></div>
+      <div class="bar"><div id="xp-bar"></div></div>
+      <div class="sub" style="margin-top:8px">XP EINSTEIN: <strong id="einstein-xp-label">0 XP</strong></div>
+      <div class="profile-grid">
+        <div class="mini"><strong id="stat-level">Nível 1</strong><span>nível atual</span></div>
+        <div class="mini"><strong id="stat-points">0</strong><span>pontos livres</span></div>
+        <div class="mini"><strong id="stat-correct">0</strong><span>acertos totais</span></div>
+        <div class="mini"><strong id="stat-exams">0</strong><span>provas aprovadas</span></div>
+      </div>
+      <div class="divider"></div>
+      <div class="attr-area">
+        <div class="section-head"><h3 style="margin:0">Atributos</h3><span class="sub">+1 por ponto</span></div>
+        <div class="attr-list" id="attributes"></div>
+        <p class="notice" style="margin:12px 0 0">Ganhe pontos ao ser promovido e distribua-os nos atributos.</p>
+      </div>
+    </aside>
+
+    <main class="panel">
+      <div class="tabs">
+        <button class="tab active" data-tab="training">Treinamento</button>
+        <button class="tab" data-tab="exam">Prova de promoção</button>
+        <button class="tab" data-tab="career">Carreira</button>
+      </div>
+
+      <section class="screen active" id="screen-training">
+        <div class="eyebrow">Centro de treinamento</div>
+        <h1>Prepare-se para a missão.</h1>
+        <p class="muted">Responda a perguntas de conhecimentos gerais para ganhar XP. Ao atingir o requisito da próxima patente, você poderá tentar a prova de promoção.</p>
+        <div class="mission">
+          <div class="section-head"><span class="eyebrow">Missão de conhecimento</span><span class="chip" id="training-number">Questão 1</span></div>
+          <div class="difficulty-picker">
+            <label for="difficulty-select">Nível das perguntas</label>
+            <select id="difficulty-select">
+              <option value="facil">🟢 Fácil · +20 XP</option>
+              <option value="medio">🔵 Médio · +75 XP</option>
+              <option value="dificil">🟠 Difícil · +250 XP</option>
+              <option value="einstein">🟣 EINSTEIN? · +1.000 XP</option>
+            </select>
+            <p class="notice" id="difficulty-description">Perguntas diretas para aquecer.</p>
+          </div>
+          <h2 id="training-question" class="question">Carregando pergunta...</h2>
+          <div id="training-answers" class="answers"></div>
+          <div id="training-feedback" class="feedback hidden" role="status"></div>
+          <div class="bottom-row"><span class="notice" id="training-hint">Cada acerto concede XP conforme a dificuldade.</span><button class="btn hidden" id="training-next">Próxima pergunta →</button></div>
+        </div>
+        <div id="training-toast" class="toast hidden"></div>
+      </section>
+
+      <section class="screen" id="screen-exam">
+        <div class="eyebrow">Avaliação de carreira</div>
+        <h1>Prova de promoção</h1>
+        <p class="muted">Para tentar a promoção, alcance o XP mínimo da próxima patente. A prova tem 3 perguntas e exige pelo menos 2 acertos. Se não passar, continue treinando e tente novamente.</p>
+        <div class="mission" id="exam-info"></div>
+        <div id="exam-content" class="mission hidden">
+          <div class="section-head"><span class="eyebrow" id="exam-stage">Questão 1/3</span><span class="chip">Prova oficial</span></div>
+          <h2 id="exam-question" class="question"></h2>
+          <div id="exam-answers" class="answers"></div>
+          <div id="exam-feedback" class="feedback hidden" role="status"></div>
+          <div class="bottom-row"><span class="notice" id="exam-hint">Boa sorte, militar.</span><button class="btn hidden" id="exam-next">Continuar →</button></div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-career">
+        <div class="eyebrow">Registro de serviço</div>
+        <h1>Sua carreira.</h1>
+        <p class="muted">Confira as patentes e seu progresso. A partir de Tenente-Coronel, você precisa acumular XP geral e XP EINSTEIN, ganho exclusivamente no nível EINSTEIN?. Patentes fictícias para progressão do jogo.</p>
+        <div class="rank-list" id="career-list"></div>
+        <div class="divider"></div>
+        <div class="section-head"><h2 style="margin:0">Registro de desempenho</h2><span class="chip">Salvo neste navegador</span></div>
+        <p class="notice" id="record-summary"></p>
+        <button class="btn secondary" id="reset-btn">Reiniciar carreira</button>
+        <p class="notice" style="margin-top:10px">A reinicialização apaga o progresso salvo deste jogo neste navegador.</p>
+      </section>
+    </main>
+  </div>
+  <div class="foot">VIEIRA LABS · Projeto demonstrativo de programação · Progresso salvo localmente<br><strong style="display:inline-block;margin-top:8px;color:#a8ef79;letter-spacing:.08em">ESTE PROJETO FOI CRIADO POR PYETRO VIEIRA</strong></div>
+</div>
+<script>
+const STORAGE_KEY = "vieiraLabsMilitaryQuiz_v2";
+const ranks = [
+  {name:"Recruta", xp:0, title:"Em formação", icon:"🪖"},
+  {name:"Soldado", xp:100, title:"Combatente", icon:"🎖️"},
+  {name:"Cabo", xp:260, title:"Auxiliar de liderança", icon:"🏅"},
+  {name:"3º Sargento", xp:480, title:"Líder de equipe", icon:"⭐"},
+  {name:"2º Sargento", xp:760, title:"Experiente", icon:"🌟"},
+  {name:"1º Sargento", xp:1100, title:"Especialista", icon:"🏆"},
+  {name:"Subtenente", xp:1500, title:"Veterano", icon:"🛡️"},
+  {name:"Aspirante", xp:1950, title:"Oficial em formação", icon:"⚔️"},
+  {name:"2º Tenente", xp:2450, title:"Oficial", icon:"🎗️"},
+  {name:"1º Tenente", xp:4000, title:"Oficial experiente", icon:"🎖️"},
+  {name:"Capitão", xp:6500, title:"Comandante de companhia", icon:"🦅"},
+  {name:"Major", xp:10000, title:"Oficial de estado-maior", icon:"⭐"},
+  {name:"Tenente-Coronel", xp:16000, title:"Liderança avançada · exige XP EINSTEIN", icon:"🏅", einsteinXP:16000},
+  {name:"Coronel", xp:26000, title:"Alto comando · exige XP EINSTEIN", icon:"🛡️", einsteinXP:26000},
+  {name:"General de Brigada", xp:42000, title:"Generalato · exige XP EINSTEIN", icon:"🌟", einsteinXP:42000},
+  {name:"General de Divisão", xp:65000, title:"Alto generalato · exige XP EINSTEIN", icon:"🌟", einsteinXP:65000},
+  {name:"General de Exército", xp:100000, title:"Comando máximo · exige XP EINSTEIN", icon:"👑", einsteinXP:100000}
+];
+const attributes = [
+  {id:"logic", name:"Lógica", icon:"🧩"},
+  {id:"memory", name:"Memória", icon:"🧠"},
+  {id:"science", name:"Ciência", icon:"🔬"},
+  {id:"tech", name:"Tecnologia", icon:"💻"}
+];
+const trainingQuestions = [
+  {q:"Qual é o maior planeta do Sistema Solar?",a:["Terra","Saturno","Júpiter","Netuno"],c:2,e:"Júpiter é o maior planeta do Sistema Solar."},
+  {q:"Qual é a capital do Canadá?",a:["Toronto","Ottawa","Vancouver","Montreal"],c:1,e:"A capital é Ottawa. Toronto é a maior cidade do país, mas não é a capital."},
+  {q:"Quantos lados tem um hexágono?",a:["5","6","7","8"],c:1,e:"Um hexágono tem seis lados."},
+  {q:"Qual elemento químico tem o símbolo Fe?",a:["Flúor","Fósforo","Ferro","Frâncio"],c:2,e:"Fe vem do latim ferrum, que significa ferro."},
+  {q:"Quem escreveu Dom Casmurro?",a:["José de Alencar","Machado de Assis","Clarice Lispector","Carlos Drummond de Andrade"],c:1,e:"Dom Casmurro é um romance de Machado de Assis, publicado em 1899."},
+  {q:"Qual destes mamíferos põe ovos?",a:["Morcego","Ornitorrinco","Golfinho","Gato"],c:1,e:"O ornitorrinco é um mamífero monotremado que põe ovos."},
+  {q:"Qual é a unidade de resistência elétrica?",a:["Watt","Volt","Ampere","Ohm"],c:3,e:"A resistência elétrica é medida em ohms (Ω)."},
+  {q:"Em que ano o Muro de Berlim começou a ser aberto?",a:["1987","1989","1991","1993"],c:1,e:"A abertura do Muro de Berlim começou em 9 de novembro de 1989."},
+  {q:"Qual é o menor número primo?",a:["0","1","2","3"],c:2,e:"2 é o menor número primo e o único primo par."},
+  {q:"Qual destes países não faz parte da Escandinávia no sentido geográfico mais comum?",a:["Noruega","Suécia","Dinamarca","Finlândia"],c:3,e:"Escandinávia geralmente se refere à Noruega, Suécia e Dinamarca. Finlândia faz parte dos países nórdicos."},
+  {q:"Qual órgão bombeia sangue pelo corpo humano?",a:["Pulmão","Cérebro","Coração","Fígado"],c:2,e:"O coração bombeia sangue pelo sistema circulatório."},
+  {q:"Qual linguagem é frequentemente usada para estruturar páginas web?",a:["HTML","SQL","Python apenas","C++ apenas"],c:0,e:"HTML define a estrutura e o conteúdo de uma página web."},
+  {q:"Qual oceano é o maior da Terra?",a:["Atlântico","Índico","Ártico","Pacífico"],c:3,e:"O Oceano Pacífico é o maior e mais profundo dos oceanos."},
+  {q:"Quanto é 12 × 8?",a:["84","92","96","108"],c:2,e:"12 multiplicado por 8 é 96."},
+  {q:"Qual gás as plantas absorvem principalmente na fotossíntese?",a:["Oxigênio","Dióxido de carbono","Hidrogênio","Hélio"],c:1,e:"As plantas utilizam dióxido de carbono (CO₂), água e luz para produzir açúcares na fotossíntese."},
+  {q:"Qual é a capital do Japão?",a:["Osaka","Kyoto","Tóquio","Hiroshima"],c:2,e:"Tóquio é a capital do Japão."},
+  {q:"Qual é o resultado de 144 ÷ 12?",a:["10","11","12","14"],c:2,e:"144 dividido por 12 é 12."},
+  {q:"Qual país tem formato frequentemente comparado a uma bota?",a:["Grécia","Itália","Portugal","Croácia"],c:1,e:"A península italiana lembra o formato de uma bota."},
+  {q:"Qual é o maior órgão do corpo humano?",a:["Fígado","Pele","Pulmão","Intestino"],c:1,e:"A pele é o maior órgão do corpo humano."},
+  {q:"Quantos minutos há em 2 horas e meia?",a:["120","130","150","180"],c:2,e:"Duas horas são 120 minutos; mais 30 minutos totalizam 150."},
+  {q:"Qual é o símbolo químico do ouro?",a:["Ag","Au","Go","Or"],c:1,e:"O símbolo Au vem do latim aurum."},
+  {q:"Quem pintou a Mona Lisa?",a:["Michelangelo","Van Gogh","Leonardo da Vinci","Picasso"],c:2,e:"A Mona Lisa é uma obra de Leonardo da Vinci."},
+  {q:"Qual planeta é famoso por seus anéis visíveis?",a:["Saturno","Marte","Mercúrio","Terra"],c:0,e:"Saturno é especialmente conhecido por seu amplo sistema de anéis."},
+  {q:"Em qual continente fica o Egito?",a:["Europa","África","América","Oceania"],c:1,e:"A maior parte do território egípcio fica no nordeste da África."},
+  {q:"Qual instrumento mede a temperatura?",a:["Barômetro","Termômetro","Higrômetro","Anemômetro"],c:1,e:"O termômetro é usado para medir temperatura."},
+  {q:"Qual é o plural correto de 'cidadão'?",a:["Cidadões","Cidadães","Cidadãos","Cidadans"],c:2,e:"O plural padrão de cidadão é cidadãos."},
+  {q:"Qual é o resultado de 7 ao quadrado?",a:["14","42","49","56"],c:2,e:"7² equivale a 7 × 7 = 49."},
+  {q:"Qual destes animais é um anfíbio?",a:["Sapo","Tartaruga","Águia","Cavalo"],c:0,e:"Sapos são anfíbios, capazes de viver parte da vida na água e parte em terra."},
+  {q:"Qual é a estrela mais próxima da Terra?",a:["Sirius","Sol","Próxima Centauri","Vega"],c:1,e:"O Sol é a estrela mais próxima da Terra."},
+  {q:"Qual é a moeda oficial do Reino Unido?",a:["Euro","Dólar","Libra esterlina","Franco"],c:2,e:"A moeda do Reino Unido é a libra esterlina."},
+  {q:"Qual é a função principal das raízes de uma planta?",a:["Produzir sementes","Absorver água e sais minerais","Atrair polinizadores","Produzir luz"],c:1,e:"As raízes ajudam a fixar a planta e absorvem água e sais minerais."},
+  {q:"Qual é o maior deserto quente do mundo?",a:["Gobi","Saara","Kalahari","Atacama"],c:1,e:"O Saara é o maior deserto quente do planeta."},
+  {q:"Qual destes números é divisível por 3?",a:["14","22","27","35"],c:2,e:"27 é divisível por 3 porque 2 + 7 = 9, que é múltiplo de 3."},
+  {q:"Qual navegador é desenvolvido pela Mozilla?",a:["Edge","Safari","Firefox","Opera GX"],c:2,e:"O Firefox é desenvolvido pela Mozilla."},
+  {q:"O que significa a sigla CPU?",a:["Central Processing Unit","Computer Personal Utility","Core Program Upload","Central Power User"],c:0,e:"CPU significa Unidade Central de Processamento."},
+  {q:"Qual comando de Python mostra um texto na tela?",a:["input()","print()","loop()","writeScreen()"],c:1,e:"A função print() exibe informações no terminal."},
+  {q:"Em HTML, qual tag normalmente cria um link?",a:["<p>","<img>","<a>","<h1>"],c:2,e:"A tag <a> cria links; o destino costuma ser definido pelo atributo href."},
+  {q:"Qual é a finalidade de uma senha forte e única?",a:["Deixar o computador mais rápido","Reduzir o risco de acesso indevido","Aumentar a internet","Eliminar todos os vírus"],c:1,e:"Senhas fortes e diferentes dificultam invasões e reduzem danos quando uma senha vaza."},
+  {q:"O que é phishing?",a:["Um tipo de monitor","Golpe que tenta roubar dados por mensagens ou páginas falsas","Uma linguagem de programação","Um sistema de refrigeração"],c:1,e:"Phishing usa engano para levar a vítima a revelar dados ou instalar algo malicioso."},
+  {q:"Qual destas opções é um sistema operacional?",a:["Linux","HTML","Wi-Fi","USB"],c:0,e:"Linux é uma família de sistemas operacionais."},
+  {q:"Em redes, para que serve um endereço IP?",a:["Identificar uma interface na rede","Aumentar a memória RAM","Criptografar qualquer arquivo automaticamente","Medir a temperatura do processador"],c:0,e:"O endereço IP identifica uma interface para comunicação em redes IP."},
+  {q:"Qual unidade é normalmente usada para medir capacidade de armazenamento?",a:["Litro","Gigabyte","Volt","Quilômetro"],c:1,e:"Gigabyte é uma unidade comum para capacidade de armazenamento digital."},
+  {q:"O que significa fazer backup?",a:["Apagar arquivos duplicados","Criar uma cópia de segurança dos dados","Trocar a placa-mãe","Desligar a internet"],c:1,e:"Backup é uma cópia que permite recuperar dados em caso de perda."},
+  {q:"Qual destas práticas é mais segura ao usar Wi-Fi público?",a:["Acessar qualquer link recebido","Desativar todas as atualizações","Evitar operações sensíveis em redes não confiáveis","Compartilhar senhas com desconhecidos"],c:2,e:"Redes públicas podem ser arriscadas; evite atividades sensíveis e verifique a segurança da conexão."},
+  {q:"Qual é o resultado de 3/4 em porcentagem?",a:["25%","50%","75%","80%"],c:2,e:"3 dividido por 4 é 0,75, ou 75%."},
+  {q:"Se um produto custa R$ 80 e recebe desconto de 25%, quanto passa a custar?",a:["R$ 20","R$ 55","R$ 60","R$ 65"],c:2,e:"25% de 80 é 20; 80 − 20 = 60."},
+  {q:"Qual é a raiz quadrada de 225?",a:["13","14","15","16"],c:2,e:"15 × 15 = 225."},
+  {q:"Quanto é 2³?",a:["6","8","9","12"],c:1,e:"2³ é 2 × 2 × 2 = 8."},
+  {q:"Qual fração é equivalente a 1/2?",a:["2/3","3/6","4/10","5/8"],c:1,e:"3/6 simplifica para 1/2."},
+  {q:"Qual é o próximo número da sequência 2, 4, 8, 16...?",a:["18","24","30","32"],c:3,e:"Cada número é o dobro do anterior; o próximo é 32."},
+  {q:"Um carro percorre 180 km em 3 horas. Qual é a velocidade média?",a:["45 km/h","60 km/h","75 km/h","90 km/h"],c:1,e:"Velocidade média = distância ÷ tempo: 180 ÷ 3 = 60 km/h."},
+  {q:"Qual é o valor de 5! (fatorial de 5)?",a:["25","60","100","120"],c:3,e:"5! = 5 × 4 × 3 × 2 × 1 = 120."},
+  {q:"Qual é o nome do processo pelo qual as células obtêm energia a partir de nutrientes?",a:["Respiração celular","Polinização","Erosão","Filtração"],c:0,e:"A respiração celular libera energia química dos nutrientes."},
+  {q:"Qual vitamina é produzida na pele com ajuda da luz solar?",a:["Vitamina A","Vitamina C","Vitamina D","Vitamina K"],c:2,e:"A exposição à radiação UVB contribui para a produção de vitamina D na pele."},
+  {q:"Qual componente do sangue ajuda principalmente na coagulação?",a:["Plaquetas","Hemácias","Neurônios","Alvéolos"],c:0,e:"As plaquetas participam da formação do coágulo sanguíneo."},
+  {q:"Qual é o pH aproximado de uma solução neutra a 25 °C?",a:["0","5","7","14"],c:2,e:"Uma solução neutra tem pH próximo de 7 a 25 °C."},
+  {q:"Qual força mantém os planetas em órbita ao redor do Sol?",a:["Atrito","Gravidade","Magnetismo terrestre","Eletricidade estática"],c:1,e:"A gravidade do Sol mantém os planetas ligados às suas órbitas."},
+  {q:"Qual estado físico tem volume definido, mas assume a forma do recipiente?",a:["Sólido","Líquido","Gasoso","Plasma apenas"],c:1,e:"Líquidos mantêm aproximadamente o volume, mas assumem a forma do recipiente."},
+  {q:"Qual metal é líquido em temperatura ambiente comum?",a:["Ferro","Mercúrio","Alumínio","Cobre"],c:1,e:"O mercúrio é um metal que permanece líquido em temperatura ambiente."},
+  {q:"Qual é o satélite natural da Terra?",a:["Europa","Lua","Fobos","Titã"],c:1,e:"A Lua é o satélite natural da Terra."},
+  {q:"Qual é o maior mamífero conhecido?",a:["Elefante-africano","Baleia-azul","Girafa","Orca"],c:1,e:"A baleia-azul é o maior animal conhecido e também o maior mamífero."},
+  {q:"Qual bioma ocupa grande parte do norte do Brasil?",a:["Pampa","Caatinga","Amazônia","Pantanal"],c:2,e:"A Floresta Amazônica ocupa grande parte da região Norte."},
+  {q:"Qual rio é frequentemente citado como um dos mais extensos do mundo e atravessa o Egito?",a:["Danúbio","Nilo","Tâmisa","Reno"],c:1,e:"O rio Nilo atravessa o nordeste da África e é essencial para o Egito."},
+  {q:"Em que país ficam as pirâmides de Gizé?",a:["México","Peru","Egito","Índia"],c:2,e:"As famosas pirâmides de Gizé ficam no Egito, perto do Cairo."},
+  {q:"Em que ano ocorreu a chegada de Pedro Álvares Cabral ao território que hoje é o Brasil?",a:["1492","1500","1530","1822"],c:1,e:"A chegada da expedição portuguesa ocorreu em 1500."},
+  {q:"Em que ano foi proclamada a Independência do Brasil?",a:["1789","1808","1822","1889"],c:2,e:"A Independência do Brasil foi proclamada em 1822."},
+  {q:"Quem foi o primeiro presidente do Brasil?",a:["Getúlio Vargas","Deodoro da Fonseca","Dom Pedro II","Juscelino Kubitschek"],c:1,e:"Deodoro da Fonseca foi o primeiro presidente da República brasileira."},
+  {q:"Qual civilização construiu Machu Picchu?",a:["Maia","Inca","Romana","Egípcia"],c:1,e:"Machu Picchu foi construída pela civilização inca, na região dos Andes."},
+  {q:"Qual documento limita os poderes do Estado e organiza os direitos fundamentais de um país?",a:["Constituição","Nota fiscal","Passaporte","Certidão de nascimento"],c:0,e:"A Constituição estabelece a estrutura do Estado e direitos e deveres fundamentais."},
+  {q:"Qual é a principal função do poder Judiciário?",a:["Criar todas as leis sozinho","Julgar conflitos e aplicar o direito","Comandar empresas privadas","Organizar eleições em todos os países"],c:1,e:"O Judiciário resolve conflitos e interpreta/aplica as leis nos casos concretos."},
+  {q:"Qual oceano banha o litoral leste do Brasil?",a:["Pacífico","Atlântico","Índico","Ártico"],c:1,e:"O litoral brasileiro é banhado pelo Oceano Atlântico."},
+  {q:"Qual linha imaginária divide a Terra em hemisférios Norte e Sul?",a:["Meridiano de Greenwich","Trópico de Capricórnio","Linha do Equador","Círculo Polar Ártico"],c:2,e:"A Linha do Equador divide a Terra em hemisférios Norte e Sul."},
+  {q:"Qual é a capital do estado de São Paulo?",a:["Campinas","Santos","São Paulo","São José dos Campos"],c:2,e:"A capital do estado é a cidade de São Paulo."},
+  {q:"Qual é o idioma oficial predominante no Brasil?",a:["Espanhol","Português","Italiano","Francês"],c:1,e:"O português é a língua oficial do Brasil."},
+  {q:"Qual gênero textual costuma apresentar personagens, conflito e enredo fictício?",a:["Bula","Romance","Manual técnico","Ata"],c:1,e:"O romance é uma narrativa longa com personagens e desenvolvimento de enredo."},
+  {q:"Qual sinal de pontuação costuma encerrar uma pergunta direta?",a:["Ponto e vírgula","Dois-pontos","Ponto de interrogação","Vírgula"],c:2,e:"O ponto de interrogação marca perguntas diretas."},
+  {q:"Na frase 'Os soldados treinavam', qual é o verbo?",a:["Os","soldados","treinavam","nenhuma palavra"],c:2,e:"'Treinavam' indica a ação e é o verbo da frase."},
+  {q:"Qual palavra é sinônimo de 'corajoso'?",a:["Covarde","Valente","Distraído","Frágil"],c:1,e:"Valente é sinônimo de corajoso."},
+  {q:"Qual palavra está escrita corretamente?",a:["Excessão","Exceção","Escessão","Eceção"],c:1,e:"A grafia correta é exceção."},
+  {q:"Qual é o antônimo de 'escasso'?",a:["Raro","Insuficiente","Abundante","Limitado"],c:2,e:"Abundante é o oposto de escasso."},
+  {q:"Qual destas fontes é renovável?",a:["Carvão mineral","Petróleo","Energia solar","Gás natural"],c:2,e:"A energia solar vem de uma fonte naturalmente reposta pelo Sol."},
+  {q:"Qual prática ajuda a reduzir o desperdício de água?",a:["Lavar calçada com mangueira por muito tempo","Consertar vazamentos","Deixar torneira aberta ao escovar os dentes","Tomar banhos mais longos"],c:1,e:"Consertar vazamentos evita perda contínua de água tratada."},
+  {q:"O que é biodiversidade?",a:["Apenas o número de árvores de uma floresta","Variedade de formas de vida em uma região ou no planeta","Quantidade de chuva anual","Temperatura média do oceano"],c:1,e:"Biodiversidade é a variedade de organismos, genes e ecossistemas."},
+  {q:"Qual gás é o mais associado ao aumento do efeito estufa causado por atividades humanas?",a:["Dióxido de carbono","Hélio","Neônio","Hidrogênio"],c:0,e:"O dióxido de carbono é um dos principais gases de efeito estufa emitidos por atividades humanas."},
+  {q:"Qual equipamento protege circuitos contra picos de tensão em instalações adequadas?",a:["Protetor contra surtos","Fone de ouvido","Webcam","Mousepad"],c:0,e:"Dispositivos de proteção contra surtos ajudam a limitar sobretensões transitórias."},
+  {q:"Qual é a função da memória RAM?",a:["Armazenar temporariamente dados em uso","Substituir permanentemente o SSD","Fornecer energia da tomada","Exibir imagens sem placa gráfica"],c:0,e:"A RAM mantém dados e instruções temporários usados pelos programas em execução."},
+  {q:"Qual extensão costuma ser usada em arquivos Python?",a:[".html",".py",".jpg",".mp3"],c:1,e:"Arquivos de código Python normalmente usam a extensão .py."},
+  {q:"O que faz o comando input() em Python?",a:["Recebe dados digitados pelo usuário","Fecha o programa sempre","Cria uma imagem","Instala bibliotecas automaticamente"],c:0,e:"input() lê uma entrada fornecida pelo usuário, normalmente pelo terminal."},
+  {q:"Qual estrutura Python é usada para repetir instruções enquanto uma condição for verdadeira?",a:["if","while","import","return"],c:1,e:"O laço while repete seu bloco enquanto a condição for verdadeira."},
+  {q:"O que significa código aberto (open source)?",a:["Código que nunca pode ser alterado","Código disponibilizado sob uma licença que permite usos definidos, como estudar e modificar","Programa que só funciona sem internet","Código que não contém erros"],c:1,e:"Licenças open source permitem usos e modificações conforme suas condições."},
+  {q:"Qual é uma boa atitude ao encontrar um arquivo suspeito recebido por mensagem?",a:["Executá-lo para descobrir o que faz","Encaminhar para todos os contatos","Não abrir e verificar a origem por um canal confiável","Desativar o antivírus"],c:2,e:"Evite abrir arquivos inesperados e confirme a origem antes de qualquer interação."},
+  {q:"Em segurança digital, para que serve a autenticação em dois fatores?",a:["Adicionar uma etapa extra de verificação","Dobrar a velocidade do Wi-Fi","Apagar automaticamente backups","Deixar a senha visível"],c:0,e:"A autenticação em dois fatores exige uma segunda prova de identidade além da senha."},
+  {q:"Qual protocolo criptográfico é usado para proteger conexões HTTPS?",a:["TLS","Telnet","FTP","POP3 apenas"],c:0,e:"HTTPS normalmente usa TLS para proteger a comunicação entre cliente e servidor."},
+  {q:"O que é uma máquina virtual?",a:["Um computador simulado por software que executa um sistema isolado","Uma placa de vídeo externa obrigatória","Um tipo de cabo de rede","Um antivírus físico"],c:0,e:"Uma máquina virtual simula um computador e pode executar seu próprio sistema operacional."},
+  {q:"Qual é o objetivo de um firewall?",a:["Controlar tráfego de rede conforme regras","Aumentar o tamanho do monitor","Criar senhas para todos os sites automaticamente","Substituir o sistema operacional"],c:0,e:"Um firewall filtra conexões de entrada e saída com base em regras de segurança."},
+  {q:"Em uma investigação de segurança autorizada, qual é a primeira regra?",a:["Testar sistemas aleatórios","Ter autorização e definir o escopo","Publicar senhas encontradas","Desativar registros"],c:1,e:"Testes devem ocorrer com autorização explícita e limites bem definidos."},
+  {q:"Qual unidade mede frequência?",a:["Hertz","Newton","Watt-hora","Pascal"],c:0,e:"A frequência é medida em hertz (Hz), ciclos por segundo."},
+  {q:"Qual grandeza é medida em watts?",a:["Potência","Massa","Distância","Temperatura"],c:0,e:"Watt é a unidade de potência no Sistema Internacional."},
+  {q:"Qual é a velocidade aproximada da luz no vácuo?",a:["300 mil km/s","30 mil km/s","3 mil km/s","3 milhões km/s"],c:0,e:"A luz viaja no vácuo a cerca de 300 mil quilômetros por segundo."},
+  {q:"Qual cientista propôs a teoria da relatividade?",a:["Albert Einstein","Charles Darwin","Marie Curie","Galileu Galilei"],c:0,e:"Albert Einstein desenvolveu as teorias da relatividade especial e geral."},
+  {q:"Qual cientista ficou conhecida por pesquisas sobre radioatividade e ganhou dois prêmios Nobel?",a:["Ada Lovelace","Marie Curie","Jane Goodall","Rosalind Franklin"],c:1,e:"Marie Curie recebeu Nobel de Física e de Química por seus trabalhos científicos."},
+  {q:"Qual é o nome do processo em que uma população muda ao longo das gerações por mecanismos evolutivos?",a:["Evolução biológica","Evaporação","Fermentação","Condensação"],c:0,e:"A evolução biológica descreve mudanças hereditárias nas populações ao longo das gerações."},
+  {q:"Qual destes é um exemplo de fonte primária para estudar um acontecimento histórico?",a:["Uma carta escrita na época","Um resumo moderno sem referências","Uma opinião aleatória","Um filme de ficção sem contexto"],c:0,e:"Uma carta contemporânea ao evento pode ser uma fonte primária, dependendo da pesquisa."},
+  {q:"Qual é a principal função dos glóbulos brancos?",a:["Defender o organismo contra agentes infecciosos","Transportar a maior parte do oxigênio","Produzir movimento nos ossos","Digerir alimentos no estômago"],c:0,e:"Os glóbulos brancos participam da resposta imunológica."},
+  {q:"Qual órgão filtra o sangue e produz urina?",a:["Rins","Pulmões","Pâncreas","Baço"],c:0,e:"Os rins filtram o sangue e ajudam a regular água e sais, formando a urina."},
+  {q:"Qual é o nome do movimento da Terra em torno do próprio eixo?",a:["Translação","Rotação","Precessão lunar","Revolução solar"],c:1,e:"A rotação da Terra causa a alternância entre dia e noite."},
+  {q:"Qual movimento da Terra ao redor do Sol, combinado com sua inclinação axial, está ligado às estações do ano?",a:["Rotação","Translação","Maré","Eclipse"],c:1,e:"A translação junto da inclinação do eixo terrestre está ligada às estações."},
+  {q:"Qual é a capital da Argentina?",a:["Córdoba","Rosário","Buenos Aires","Mendoza"],c:2,e:"Buenos Aires é a capital da Argentina."},
+  {q:"Qual país é conhecido por ter as cidades de Seul e Busan?",a:["Coreia do Sul","Tailândia","Mongólia","Vietnã"],c:0,e:"Seul e Busan são cidades importantes da Coreia do Sul."},
+  {q:"Qual é o maior país do mundo em área territorial?",a:["Canadá","China","Rússia","Estados Unidos"],c:2,e:"A Rússia é o maior país do mundo em área territorial."},
+  {q:"Qual país sediou os Jogos Olímpicos de 2016?",a:["China","Brasil","Reino Unido","Japão"],c:1,e:"Os Jogos Olímpicos de 2016 foram realizados no Rio de Janeiro, Brasil."},
+  {q:"Qual é o resultado de 18 + 27?",a:["35","43","45","55"],c:2,e:"18 + 27 = 45."},
+  {q:"Se x + 9 = 23, quanto vale x?",a:["12","14","16","32"],c:1,e:"Subtraindo 9 dos dois lados, x = 23 − 9 = 14."},
+  {q:"Qual é a média aritmética de 4, 8 e 12?",a:["6","8","10","12"],c:1,e:"(4 + 8 + 12) ÷ 3 = 24 ÷ 3 = 8."},
+  {q:"Qual é o perímetro de um quadrado de lado 6 cm?",a:["12 cm","18 cm","24 cm","36 cm"],c:2,e:"O perímetro é quatro vezes o lado: 4 × 6 = 24 cm."},
+  {q:"Qual é a área de um retângulo de 5 cm por 8 cm?",a:["13 cm²","26 cm²","40 cm²","80 cm²"],c:2,e:"Área do retângulo = comprimento × largura = 5 × 8 = 40 cm²."},
+  {q:"Qual é a probabilidade de sair cara em uma moeda justa lançada uma vez?",a:["0%","25%","50%","100%"],c:2,e:"Há dois resultados igualmente prováveis: cara ou coroa; a chance é 1/2."},
+  {q:"Qual destes formatos de arquivo costuma ser usado para documentos portáteis?",a:["PDF","EXE","DLL","BAT"],c:0,e:"PDF é amplamente usado para compartilhar documentos mantendo sua apresentação."},
+  {q:"Qual tecla costuma apagar o caractere à esquerda do cursor?",a:["Shift","Backspace","Caps Lock","Esc"],c:1,e:"Backspace apaga o caractere imediatamente à esquerda do cursor em muitos campos de texto."},
+  {q:"Qual componente é conhecido como armazenamento rápido e volátil do computador?",a:["RAM","SSD","HD externo","Pendrive"],c:0,e:"A memória RAM é rápida e volátil: perde seu conteúdo quando falta energia."},
+  {q:"O que significa atualizar um programa?",a:["Instalar uma versão com correções ou melhorias","Apagar todos os documentos","Desligar o computador para sempre","Aumentar fisicamente a memória"],c:0,e:"Atualizações podem corrigir falhas, melhorar funções e fechar vulnerabilidades."},
+  {q:"Qual é uma característica típica de uma mensagem de engenharia social?",a:["Pressiona a vítima a agir com urgência ou medo","Sempre vem de um endereço oficial","Nunca contém links","Só aparece em papel"],c:0,e:"Golpes de engenharia social frequentemente usam urgência, medo ou autoridade para manipular decisões."},
+  {q:"Em mapas, o que indica a escala?",a:["A relação entre distância no mapa e distância real","A previsão do tempo","A população de cada cidade","A altitude do oceano"],c:0,e:"A escala representa a proporção entre medidas no mapa e no terreno."},
+  {q:"Qual é a camada mais externa e rígida da Terra, formada pela crosta e parte superior do manto?",a:["Litosfera","Núcleo externo","Hidrosfera","Atmosfera"],c:0,e:"A litosfera inclui a crosta e a porção rígida superior do manto."},
+  {q:"Qual é o nome da passagem do estado gasoso diretamente para o sólido?",a:["Fusão","Sublimação","Deposição","Evaporação"],c:2,e:"Deposição, ou ressublimação, é a passagem direta do gás para o sólido."},
+  {q:"Qual destes materiais é geralmente um bom condutor elétrico?",a:["Borracha","Cobre","Madeira seca","Plástico"],c:1,e:"O cobre é um bom condutor e é muito usado em fios elétricos."},
+  {q:"Qual é o principal gás presente na atmosfera terrestre?",a:["Oxigênio","Nitrogênio","Dióxido de carbono","Hidrogênio"],c:1,e:"O nitrogênio compõe cerca de 78% da atmosfera terrestre."},
+  {q:"Qual destas opções é uma linguagem de consulta a bancos de dados relacionais?",a:["SQL","CSS","PNG","HDMI"],c:0,e:"SQL é usada para consultar e manipular dados em bancos relacionais."},
+  {q:"Em desenvolvimento web, para que serve CSS?",a:["Estilizar a aparência de páginas","Armazenar senhas com segurança automaticamente","Substituir o servidor físico","Editar apenas arquivos de áudio"],c:0,e:"CSS controla apresentação visual, como cores, espaçamento e layout de páginas web."},
+  {q:"Qual ferramenta é usada para acompanhar versões e alterações em projetos de código?",a:["Git","Paint","Calculadora","Bloco de notas apenas"],c:0,e:"Git é um sistema de controle de versão muito usado em projetos de software."},
+  {q:"Qual atitude demonstra ética em cibersegurança?",a:["Acessar dados privados sem permissão","Relatar vulnerabilidades de forma responsável e autorizada","Testar senhas de colegas","Publicar informações pessoais encontradas"],c:1,e:"A prática ética respeita autorização, privacidade, leis e comunicação responsável."}
+];
+const einsteinQuestions = [
+ {q:"Um algoritmo tem complexidade O(n²). Se o tamanho da entrada dobra, aproximadamente como cresce o número de operações dominantes?",a:["Dobra","Triplica","Quadruplica","Permanece igual"],c:2,e:"O termo quadrático passa de n² para (2n)² = 4n²."},
+ {q:"Em uma rede IPv4 /26, quantos endereços de host utilizáveis existem em uma sub-rede tradicional?",a:["30","62","64","126"],c:1,e:"Restam 6 bits de host: 2⁶ = 64 endereços; retirando rede e broadcast, 62 utilizáveis."},
+ {q:"Qual propriedade da criptografia garante que uma mensagem não foi alterada sem autorização?",a:["Confidencialidade","Integridade","Disponibilidade","Anonimato"],c:1,e:"Integridade permite detectar alterações indevidas nos dados."},
+ {q:"Uma função hash criptográfica é usada para armazenar senhas. Qual prática é mais adequada?",a:["SHA-1 sem salt","Texto puro","Hash lento e específico para senhas com salt único","Base64"],c:2,e:"Use algoritmos como Argon2id, scrypt ou bcrypt, com salt exclusivo; hash rápido puro não é adequado para senhas."},
+ {q:"Em lógica proposicional, qual expressão é equivalente a ¬(A ∧ B)?",a:["¬A ∧ ¬B","¬A ∨ ¬B","A ∨ B","A ∧ ¬B"],c:1,e:"Pela lei de De Morgan, negar uma conjunção equivale à disjunção das negações."},
+ {q:"Uma vulnerabilidade permite executar comandos no servidor por meio de entradas não confiáveis. Qual defesa fundamental reduz esse risco?",a:["Aumentar o brilho do monitor","Validar entradas e evitar execução de comandos construídos por concatenação","Desligar os logs","Usar a mesma senha em todos os serviços"],c:1,e:"Evitar chamadas inseguras, usar APIs parametrizadas e validar entradas conforme o contexto reduz injeções de comandos."},
+ {q:"Em um sistema com 8 bits sem sinal, qual é o maior valor representável?",a:["127","128","255","256"],c:2,e:"O intervalo é de 0 a 2⁸−1, ou seja, 255."},
+ {q:"Qual é a ideia central de uma prova por contradição?",a:["Assumir a negação do que se quer provar e derivar uma impossibilidade","Testar todos os números do universo","Usar apenas exemplos","Substituir toda variável por zero"],c:0,e:"Se a negação da afirmação leva a uma contradição, a afirmação original é demonstrada."},
+ {q:"Em TCP, qual é o propósito principal do three-way handshake?",a:["Criptografar todos os dados automaticamente","Estabelecer e sincronizar uma conexão entre os dois lados","Resolver nomes DNS","Atribuir um endereço MAC"],c:1,e:"SYN, SYN-ACK e ACK estabelecem a conexão e sincronizam os números de sequência."},
+ {q:"Uma chave pública e uma chave privada em criptografia assimétrica formam um par relacionado. Qual afirmação é correta?",a:["A chave privada deve ser publicada","A chave pública permite derivar facilmente a privada","A chave privada deve permanecer secreta","As duas chaves são sempre idênticas"],c:2,e:"A chave privada é mantida em segredo; a pública pode ser compartilhada."},
+ {q:"Se todos os A são B e nenhum B é C, qual conclusão necessariamente segue?",a:["Alguns A são C","Nenhum A é C","Todos C são A","Não há A"],c:1,e:"Todo A pertence a B, e nenhum B pertence a C; portanto, nenhum A pertence a C."},
+ {q:"Em análise de algoritmos, o que representa a notação Ω(g(n))?",a:["Um limite assintótico inferior","Sempre o tempo exato","Um limite superior estrito","A quantidade de memória física"],c:0,e:"Ω descreve um limite assintótico inferior para o crescimento de uma função."},
+ {q:"Ao investigar um incidente, por que preservar hashes e cadeia de custódia de evidências digitais?",a:["Para tornar arquivos menores","Para apoiar a integridade e rastreabilidade das evidências","Para evitar registrar horários","Para alterar evidências sem deixar rastros"],c:1,e:"Hashes ajudam a verificar se arquivos mudaram; a cadeia de custódia registra quem coletou e manuseou as evidências."},
+ {q:"Qual cenário descreve melhor uma condição de corrida (race condition)?",a:["Um programa demora a abrir","O resultado depende da ordem imprevisível de operações concorrentes sobre estado compartilhado","Uma senha é muito longa","Uma conexão usa IPv6"],c:1,e:"Operações concorrentes podem intercalar-se de modo a produzir resultados inesperados sem sincronização adequada."},
+ {q:"Uma amostra tem média 10 e desvio-padrão 0. O que isso indica sobre os valores observados?",a:["Todos são diferentes","Todos os valores são iguais a 10","A mediana é zero","A amostra é necessariamente inválida"],c:1,e:"Desvio-padrão zero significa que não há dispersão; todos os valores coincidem com a média."},
+ {q:"Em segurança, qual princípio limita cada conta às permissões estritamente necessárias para sua função?",a:["Privilégio mínimo","Confiança implícita","Negação de serviço","Obscuridade por si só"],c:0,e:"O princípio do menor privilégio reduz o impacto de erros ou comprometimentos."},
+ {q:"Qual técnica ajuda a evitar SQL injection ao consultar uma base de dados?",a:["Concatenar texto fornecido pelo usuário diretamente na consulta","Consultas parametrizadas","Desativar autenticação","Usar nomes de tabela aleatórios como única defesa"],c:1,e:"Consultas parametrizadas separam comandos SQL dos dados fornecidos pelo usuário."},
+ {q:"Se f(n)=3n log₂(n)+5n, qual termo domina assintoticamente para n grande?",a:["5n","3n log₂(n)","Ambos são constantes","Nenhum cresce"],c:1,e:"n log n cresce mais rapidamente que n, então domina assintoticamente."},
+ {q:"Em um experimento, correlação forte entre duas variáveis prova que uma causa a outra?",a:["Sim, sempre","Não; pode haver confundidores ou coincidência","Só se a amostra for grande","Sim, se o gráfico subir"],c:1,e:"Correlação por si só não estabelece causalidade; é preciso desenho e evidências adicionais."},
+ {q:"Qual é a função de um nonce em muitos protocolos criptográficos?",a:["Ser uma senha permanente","Fornecer um valor único ou imprevisível para evitar reutilização/replay conforme o protocolo","Substituir todos os certificados","Comprimir o tráfego"],c:1,e:"Nonces ajudam a garantir frescor e a impedir certos ataques de repetição, quando usados corretamente."}
+];
+const difficultyConfig = {
+ facil:{label:"Fácil",xp:20,description:"Perguntas diretas para aquecer e construir sua base.",pool:()=>trainingQuestions.slice(0,45)},
+ medio:{label:"Médio",xp:75,description:"Exige atenção, interpretação e conhecimento geral.",pool:()=>trainingQuestions.slice(25,85)},
+ dificil:{label:"Difícil",xp:250,description:"Questões mais técnicas, cálculos e conceitos menos óbvios.",pool:()=>trainingQuestions.slice(65)},
+ einstein:{label:"EINSTEIN?",xp:1000,description:"Desafios avançados de lógica, redes, algoritmos e segurança. XP especial conta para o alto comando.",pool:()=>einsteinQuestions}
+};
+trainingQuestions.forEach((q,i)=>{q.difficulty = i<45 ? "facil" : i<85 ? "medio" : "dificil";});
+const examQuestions = [
+  [
+    {q:"Qual é o planeta conhecido como Planeta Vermelho?",a:["Vênus","Marte","Mercúrio","Urano"],c:1,e:"Marte é conhecido como Planeta Vermelho devido aos óxidos de ferro em sua superfície."},
+    {q:"Qual é o resultado de 9²?",a:["18","72","81","99"],c:2,e:"9² significa 9 × 9, que é 81."},
+    {q:"Qual continente tem a maior área territorial?",a:["África","Europa","Ásia","América do Sul"],c:2,e:"A Ásia é o maior continente em área e população."}
+  ],
+  [
+    {q:"Qual é a fórmula química da água?",a:["CO₂","H₂O","O₂","NaCl"],c:1,e:"Uma molécula de água tem dois átomos de hidrogênio e um de oxigênio."},
+    {q:"Qual destes é um número primo?",a:["21","27","29","33"],c:2,e:"29 só é divisível por 1 e por ele mesmo."},
+    {q:"Qual camada da atmosfera concentra a maior parte do ozônio atmosférico?",a:["Troposfera","Estratosfera","Mesosfera","Exosfera"],c:1,e:"A camada de ozônio fica principalmente na estratosfera."}
+  ],
+  [
+    {q:"Qual é o processo pelo qual a água líquida vira vapor?",a:["Condensação","Solidificação","Evaporação","Fusão"],c:2,e:"Evaporação é a passagem do estado líquido para o gasoso."},
+    {q:"Qual é o valor aproximado de π com duas casas decimais?",a:["2,14","3,14","3,41","4,13"],c:1,e:"Pi é aproximadamente 3,14159."},
+    {q:"Qual destes é um dispositivo de saída do computador?",a:["Teclado","Mouse","Microfone","Monitor"],c:3,e:"O monitor exibe visualmente informações do computador."}
+  ],
+  [
+    {q:"Qual é a unidade básica de corrente elétrica?",a:["Ampere","Ohm","Joule","Watt"],c:0,e:"A corrente elétrica é medida em amperes."},
+    {q:"Qual tratado é associado ao fim formal da Primeira Guerra Mundial com a Alemanha?",a:["Tratado de Versalhes","Tratado de Tordesilhas","Tratado de Paris de 1783","Tratado de Utrecht"],c:0,e:"O Tratado de Versalhes foi assinado em 1919."},
+    {q:"Qual estrutura celular contém a maior parte do material genético em células humanas?",a:["Ribossomo","Núcleo","Membrana","Lisossomo"],c:1,e:"O núcleo contém a maior parte do DNA das células humanas."}
+  ],
+  [
+    {q:"Qual é o valor de 15% de 200?",a:["15","20","30","35"],c:2,e:"10% de 200 é 20 e 5% é 10; juntos, 30."},
+    {q:"Qual cientista é associado às leis do movimento clássico?",a:["Isaac Newton","Louis Pasteur","Gregor Mendel","Niels Bohr"],c:0,e:"Isaac Newton formulou as três leis clássicas do movimento."},
+    {q:"Em redes, o que significa a sigla IP?",a:["Internet Process","Internal Program","Internet Protocol","Input Port"],c:2,e:"IP significa Internet Protocol, protocolo usado para endereçamento e encaminhamento de pacotes."}
+  ],
+  [
+    {q:"Qual é o nome da divisão celular que produz gametas?",a:["Mitose","Meiose","Osmose","Brotamento"],c:1,e:"A meiose reduz pela metade o número de cromossomos para formar gametas."},
+    {q:"Qual é a raiz quadrada de 196?",a:["12","13","14","16"],c:2,e:"14 × 14 = 196."},
+    {q:"Qual camada da Terra é líquida e contribui para gerar o campo magnético?",a:["Crosta","Manto superior","Núcleo externo","Núcleo interno"],c:2,e:"O núcleo externo é composto principalmente por metais líquidos em movimento."},
+    {q:"Qual protocolo é usado para transferir páginas web de forma segura?",a:["HTTP","HTTPS","FTP simples","SMTP"],c:1,e:"HTTPS usa criptografia TLS para proteger a comunicação entre navegador e site."}
+  ],
+  [
+    {q:"Qual é a unidade SI de energia?",a:["Newton","Pascal","Joule","Tesla"],c:2,e:"A energia é medida em joules no Sistema Internacional."},
+    {q:"Qual destes algoritmos de busca costuma exigir dados previamente ordenados?",a:["Busca linear","Busca binária","Busca aleatória","Busca em profundidade"],c:1,e:"A busca binária descarta metade do intervalo a cada etapa e exige uma sequência ordenada."},
+    {q:"Qual é a principal função das hemácias?",a:["Produzir insulina","Transportar oxigênio","Filtrar urina","Produzir bile"],c:1,e:"As hemácias transportam oxigênio por meio da hemoglobina."},
+    {q:"Qual é a capital da Nova Zelândia?",a:["Auckland","Christchurch","Wellington","Hamilton"],c:2,e:"Wellington é a capital da Nova Zelândia."}
+  ],
+  [
+    {q:"Em lógica, qual operador costuma representar 'E' (AND)?",a:["Verdadeiro se ao menos um for verdadeiro","Verdadeiro se ambos forem verdadeiros","Sempre falso","Inverte o valor"],c:1,e:"AND só é verdadeiro quando todas as condições envolvidas são verdadeiras."},
+    {q:"Qual é o nome da galáxia onde está o Sistema Solar?",a:["Andrômeda","Via Láctea","Galáxia do Triângulo","Sombrero"],c:1,e:"O Sistema Solar fica na Via Láctea."},
+    {q:"Qual processo transforma diretamente um sólido em gás?",a:["Condensação","Sublimação","Fusão","Deposição"],c:1,e:"Sublimação é a passagem direta do sólido para o gasoso."},
+    {q:"Qual é a representação binária do número decimal 5?",a:["101","110","111","100"],c:0,e:"5 em binário é 101: quatro mais zero mais um."}
+  ]
+];
+
+let state = loadState();
+let trainingIndex = 0;
+let trainingAnswered = false;
+let examRankIndex = null;
+let examSet = [];
+let examIndex = 0;
+let examCorrect = 0;
+let examAnswered = false;
+
+function defaultState(){return {xp:0,einsteinXP:0,rankIndex:0,points:0,correct:0,answered:0,examsPassed:0,attributes:{logic:1,memory:1,science:1,tech:1},history:[],trainingSeen:[]};}
+function loadState(){
+  try { const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)); if(saved && typeof saved.xp==="number" && saved.attributes) return {...defaultState(),...saved,attributes:{...defaultState().attributes,...saved.attributes}}; }
+  catch(e) {}
+  return defaultState();
+}
+function saveState(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}
+function nextRankIndex(){return Math.min(state.rankIndex+1,ranks.length-1);}
+function xpNeeded(){const next=ranks[nextRankIndex()];return state.rankIndex===ranks.length-1?state.xp:next.xp;}
+function switchTab(tab){
+  document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
+  document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+tab));
+  if(tab==="exam")renderExamInfo();
+  if(tab==="career")renderCareer();
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>switchTab(b.dataset.tab)));
+
+function renderProfile(){
+  const r=ranks[state.rankIndex];
+  document.getElementById("profile-rank").textContent=r.name;
+  document.getElementById("profile-title").textContent=r.title;
+  document.getElementById("xp-label").textContent=state.xp.toLocaleString("pt-BR")+" XP";
+  document.getElementById("einstein-xp-label").textContent=(state.einsteinXP||0).toLocaleString("pt-BR")+" XP";
+  document.getElementById("stat-level").textContent="Nível "+(state.rankIndex+1);
+  document.getElementById("stat-points").textContent=state.points;
+  document.getElementById("stat-correct").textContent=state.correct;
+  document.getElementById("stat-exams").textContent=state.examsPassed;
+  const next=ranks[nextRankIndex()];
+  const prev=r.xp;
+  const goal=state.rankIndex===ranks.length-1?state.xp:next.xp;
+  const pct=goal===prev?100:Math.max(0,Math.min(100,((state.xp-prev)/(goal-prev))*100));
+  document.getElementById("xp-bar").style.width=pct+"%";
+  document.getElementById("attributes").innerHTML="";
+  attributes.forEach(a=>{
+    const row=document.createElement("div");row.className="attr";
+    row.innerHTML=`<span>${a.icon}</span><span class="name">${a.name}</span><span class="value">${state.attributes[a.id]||1}</span>`;
+    const plus=document.createElement("button");plus.className="plus";plus.textContent="+";plus.title="Gastar 1 ponto em "+a.name;plus.disabled=state.points<=0;
+    plus.addEventListener("click",()=>{if(state.points>0){state.points--;state.attributes[a.id]=(state.attributes[a.id]||1)+1;saveState();renderAll();}});
+    row.appendChild(plus);document.getElementById("attributes").appendChild(row);
+  });
+}
+function renderAll(){renderProfile();renderTraining();renderExamInfo();renderCareer();}
+function shuffledQuestionPool(){
+  const level=document.getElementById("difficulty-select").value;
+  const source=difficultyConfig[level].pool();
+  const available=source.map((q,i)=>({...q,id:level+"-"+i,difficulty:level})).filter(q=>!state.trainingSeen.includes(q.id));
+  if(!available.length){state.trainingSeen=state.trainingSeen.filter(id=>!String(id).startsWith(level+"-"));saveState();return shuffledQuestionPool();}
+  return available[Math.floor(Math.random()*available.length)];
+}
+let currentTraining = null;
+function renderTraining(){
+  currentTraining=shuffledQuestionPool();
+  trainingAnswered=false;
+  const cfg=difficultyConfig[currentTraining.difficulty];
+  document.getElementById("training-number").textContent=cfg.label+" · Questão "+(state.answered+1);
+  document.getElementById("training-question").textContent=currentTraining.q;
+  document.getElementById("difficulty-description").textContent=cfg.description;
+  document.getElementById("training-hint").textContent="Acerto vale +"+cfg.xp.toLocaleString("pt-BR")+" XP.";
+  document.getElementById("training-feedback").className="feedback hidden";
+  document.getElementById("training-next").classList.add("hidden");
+  document.getElementById("training-hint").textContent="Cada acerto concede 20 XP.";
+  const box=document.getElementById("training-answers");box.innerHTML="";
+  makeAnswers(box,currentTraining,idx=>answerTraining(idx));
+}
+function makeAnswers(box,item,onChoose){
+  ["A","B","C","D"].forEach((letter,i)=>{
+    const btn=document.createElement("button");btn.className="answer";
+    const l=document.createElement("span");l.className="letter";l.textContent=letter;
+    const t=document.createElement("span");t.textContent=item.a[i];
+    btn.append(l,t);btn.addEventListener("click",()=>onChoose(i,btn));box.appendChild(btn);
+  });
+}
+function answerTraining(index,selected){
+  if(trainingAnswered)return;
+  trainingAnswered=true;
+  const item=currentTraining;
+  const buttons=[...document.querySelectorAll("#training-answers .answer")];
+  buttons.forEach((b,i)=>{b.disabled=true;if(i===item.c)b.classList.add("correct");});
+  const fb=document.getElementById("training-feedback");
+  if(index===item.c){const gained=difficultyConfig[item.difficulty].xp;state.xp+=gained;if(item.difficulty==="einstein")state.einsteinXP=(state.einsteinXP||0)+gained;state.correct++;fb.className="feedback good";fb.innerHTML="<strong>✓ Resposta correta! +"+gained.toLocaleString("pt-BR")+" XP"+(item.difficulty==="einstein"?" EINSTEIN":"")+"</strong>"+item.e;}
+  else{if(selected)selected.classList.add("wrong");fb.className="feedback bad";fb.innerHTML="<strong>✕ Resposta incorreta.</strong>"+item.e;}
+  state.answered++;state.trainingSeen.push(item.id);saveState();renderProfile();
+  document.getElementById("training-hint").textContent="Treinamento concluído. Continue praticando.";
+  document.getElementById("training-next").classList.remove("hidden");
+}
+document.getElementById("training-next").addEventListener("click",()=>{renderTraining();document.getElementById("training-toast").classList.add("hidden");});
+document.getElementById("difficulty-select").addEventListener("change",()=>{renderTraining();});
+
+function renderExamInfo(){
+  const box=document.getElementById("exam-info");
+  const next=state.rankIndex+1;
+  if(next>=ranks.length){box.innerHTML="<h2>Carreira máxima alcançada!</h2><p class='muted'>Você concluiu todas as patentes disponíveis nesta versão.</p>";return;}
+  const target=ranks[next];
+  const specialNeed=target.einsteinXP||0;
+  const specialHave=state.einsteinXP||0;
+  const ready=state.xp>=target.xp && specialHave>=specialNeed;
+  box.innerHTML=`<div class="eyebrow">Próxima promoção</div><h2>${ranks[state.rankIndex].name} → ${target.name}</h2><p class="muted">Requisito: ${target.xp.toLocaleString("pt-BR")} XP geral. Seu total: ${state.xp.toLocaleString("pt-BR")} XP.</p>${specialNeed?`<p class="notice">🟣 Requisito obrigatório EINSTEIN: ${specialNeed.toLocaleString("pt-BR")} XP especiais. Você tem ${specialHave.toLocaleString("pt-BR")} XP EINSTEIN.</p>`:""}<div class="bar"><div style="width:${Math.min(100,state.xp/target.xp*100)}%"></div></div><div class="bottom-row"><span class="notice">${ready?"Você pode iniciar a prova de promoção.":"Continue treinando para desbloquear a prova."}</span><button class="btn gold" id="start-exam" ${ready?"":"disabled"}>${ready?"Iniciar prova →":"Prova bloqueada"}</button></div><p class="notice" style="margin-top:12px">A prova exige pelo menos 67% de acertos. Promoções do alto comando usam prova EINSTEIN com 5 questões e exigem 4 acertos.</p>`;
+  const btn=document.getElementById("start-exam");
+  if(btn)btn.addEventListener("click",startExam);
+}
+function startExam(){
+  const next=state.rankIndex+1;
+  if(next>=ranks.length||state.xp<ranks[next].xp||(state.einsteinXP||0)<(ranks[next].einsteinXP||0))return;
+  examRankIndex=next;
+  const pool=ranks[next].einsteinXP ? einsteinQuestions : examQuestions[Math.min(next-1,examQuestions.length-1)];
+  examSet=(ranks[next].einsteinXP ? pool.slice().sort(()=>Math.random()-.5).slice(0,5) : pool).map(q=>({...q}));examIndex=0;examCorrect=0;examAnswered=false;
+  document.getElementById("exam-content").classList.remove("hidden");
+  renderExamQuestion();
+}
+function renderExamQuestion(){
+  examAnswered=false;
+  const item=examSet[examIndex];
+  document.getElementById("exam-stage").textContent=`Questão ${examIndex+1}/${examSet.length}`;
+  document.getElementById("exam-question").textContent=item.q;
+  document.getElementById("exam-feedback").className="feedback hidden";
+  document.getElementById("exam-next").classList.add("hidden");
+  document.getElementById("exam-hint").textContent="Você precisa de pelo menos "+(examSet.length===5?4:Math.ceil(examSet.length*0.67))+" acertos."+(ranks[examRankIndex]?.einsteinXP?" Prova EINSTEIN avançada.":"");
+  const box=document.getElementById("exam-answers");box.innerHTML="";
+  makeAnswers(box,item,(idx,btn)=>answerExam(idx,btn));
+}
+function answerExam(index,selected){
+  if(examAnswered)return;
+  examAnswered=true;
+  const item=examSet[examIndex];
+  const buttons=[...document.querySelectorAll("#exam-answers .answer")];
+  buttons.forEach((b,i)=>{b.disabled=true;if(i===item.c)b.classList.add("correct");});
+  const fb=document.getElementById("exam-feedback");
+  if(index===item.c){examCorrect++;fb.className="feedback good";fb.innerHTML="<strong>✓ Correto!</strong>"+item.e;}
+  else{selected.classList.add("wrong");fb.className="feedback bad";fb.innerHTML="<strong>✕ Incorreto.</strong>"+item.e;}
+  const nextBtn=document.getElementById("exam-next");
+  nextBtn.textContent=examIndex===examSet.length-1?"Finalizar prova →":"Próxima questão →";
+  nextBtn.classList.remove("hidden");
+}
+document.getElementById("exam-next").addEventListener("click",()=>{
+  if(examIndex<examSet.length-1){examIndex++;renderExamQuestion();return;}
+  finishExam();
+});
+function finishExam(){
+  const needed=examSet.length===5?4:Math.ceil(examSet.length*0.67);
+  const passed=examCorrect>=needed;
+  const box=document.getElementById("exam-content");
+  if(passed){
+    state.rankIndex=examRankIndex;
+    state.points+=3;
+    state.examsPassed++;
+    state.history.push({rank:ranks[examRankIndex].name,date:new Date().toLocaleDateString("pt-BR"),score:examCorrect+"/"+examSet.length});
+    saveState();renderAll();
+    box.innerHTML=`<div class="eyebrow">Promoção confirmada</div><h2>🎖️ Parabéns, ${ranks[examRankIndex].name}!</h2><p class="muted">Você passou na prova com ${examCorrect}/${examSet.length} acertos e foi promovido. Recebeu 3 pontos de atributo para distribuir na ficha militar.</p><button class="btn" id="back-training">Voltar ao treinamento</button>`;
+    document.getElementById("back-training").addEventListener("click",()=>{box.classList.add("hidden");box.innerHTML="";switchTab("training");});
+  }else{
+    box.innerHTML=`<div class="eyebrow">Prova encerrada</div><h2>Continue treinando, militar.</h2><p class="muted">Você acertou ${examCorrect}/${examSet.length}; precisava de ${needed}. Sua patente não mudou. Treine mais e tente novamente quando estiver pronto.</p><button class="btn" id="retry-exam">Tentar novamente</button>`;
+    document.getElementById("retry-exam").addEventListener("click",()=>{box.classList.add("hidden");renderExamInfo();});
+  }
+}
+function renderCareer(){
+  const list=document.getElementById("career-list");list.innerHTML="";
+  ranks.forEach((r,i)=>{
+    const item=document.createElement("div");item.className="rank-item"+(i===state.rankIndex?" current":"");
+    const icon=document.createElement("div");icon.className="rank-icon";icon.textContent=r.icon;
+    const info=document.createElement("div");info.className="info";info.innerHTML=`<strong>${r.name}</strong><small>${r.xp.toLocaleString("pt-BR")} XP gerais${r.einsteinXP?` + ${r.einsteinXP.toLocaleString("pt-BR")} XP EINSTEIN obrigatórios`:""} · ${r.title}</small>`;
+    const status=document.createElement("span");status.className="status";status.textContent=i<state.rankIndex?"CONCLUÍDO":i===state.rankIndex?"PATENTE ATUAL":"BLOQUEADO";
+    item.append(icon,info,status);list.appendChild(item);
+  });
+  document.getElementById("record-summary").textContent=`Você respondeu ${state.answered} perguntas de treinamento, acertou ${state.correct}, passou em ${state.examsPassed} provas e tem ${state.xp.toLocaleString("pt-BR")} XP total, incluindo ${ (state.einsteinXP||0).toLocaleString("pt-BR")} XP EINSTEIN.`;
+}
+document.getElementById("reset-btn").addEventListener("click",()=>{
+  if(confirm("Tem certeza? Todo o progresso salvo desta carreira será apagado.")){state=defaultState();saveState();document.getElementById("exam-content").classList.add("hidden");document.getElementById("exam-content").innerHTML='<div class="section-head"><span class="eyebrow" id="exam-stage">Questão 1/3</span><span class="chip">Prova oficial</span></div><h2 id="exam-question" class="question"></h2><div id="exam-answers" class="answers"></div><div id="exam-feedback" class="feedback hidden" role="status"></div><div class="bottom-row"><span class="notice" id="exam-hint">Boa sorte, militar.</span><button class="btn hidden" id="exam-next">Continuar →</button></div>';location.reload();}
+});
+renderAll();
+</script>
+</body>
+</html>
